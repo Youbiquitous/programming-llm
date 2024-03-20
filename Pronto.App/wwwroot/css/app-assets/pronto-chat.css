@@ -1,0 +1,37 @@
+﻿#chat-container a:link {
+    color: #fff;
+}
+
+#chat-container a:visited {
+    color: #fff;
+}
+
+#chat-container a:hover {
+    color: #fff;
+}
+
+#chat-container a:active {
+    color: #fff;
+}
+
+textarea {
+    border: none !important;
+}
+
+.bg-lightgray {
+    background-color: #ececf1 !important;
+}
+
+.no-radius-right {
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+.no-radius-left {
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+.bg-mediumgray {
+    background-color: #d6d6d9!important;
+}

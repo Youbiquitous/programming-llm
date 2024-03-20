@@ -1,0 +1,32 @@
+[
+  {
+    "outputFileName": "wwwroot/css/bootstrap.min.css",
+    "inputFiles": [
+      "wwwroot/css/bootstrap.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/theme.min.css",
+    "inputFiles": [
+      "wwwroot/css/theme.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/app-assets/pronto-chat.min.js",
+    "inputFiles": [
+      "wwwroot/js/app-assets/pronto-chat.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/app-assets/pronto-chat-internals.min.js",
+    "inputFiles": [
+      "wwwroot/js/app-assets/pronto-chat-internals.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/app-assets/pronto-chat.min.css",
+    "inputFiles": [
+      "wwwroot/css/app-assets/pronto-chat.css"
+    ]
+  }
+]

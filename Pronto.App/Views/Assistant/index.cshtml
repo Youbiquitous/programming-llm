@@ -1,0 +1,89 @@
+﻿@using Youbiquitous.Fluent.Gpt.Extensions;
+@using Pronto.App.Models
+@model ChatViewModel
+
+@section adhoc_scripts_bottom {
+    <script src="/js/app-assets/pronto-chat-internals.min.js"></script>
+    <script src="/js/app-assets/pronto-chat.min.js"></script>
+}
+@section adhoc_styles_top {
+    <link href="/css/app-assets/pronto-chat.min.css" rel="stylesheet"/>
+}
+
+<div class="p-4 bg-lightgray">
+    <div class="d-flex justify-content-center align-items-center mb-2">
+        <div class="me-2">
+            <label class="form-label text-muted">My Language</label>
+        </div>
+        <div>
+            <select id="my-language" class="form-select">
+                <option>English</option>
+                <option>Spanish</option>
+                <option>Italian</option>
+            </select>
+        </div>
+    </div>
+    <div id="messages"></div>
+    <div class="row">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="btn-group-vertical h-100">
+                    <button id="trigger-email-clear"
+                            class="btn btn-danger no-radius-right">
+                        <i class="fal fa-trash"></i>
+                    </button>
+                    <button id="trigger-email-paste"
+                            class="btn btn-warning no-radius-right">
+                        <i class="fal fa-paste text-white"></i>
+                    </button>
+                </div>
+                
+            </div>
+            <textarea id="email" tabindex="1"
+                      class="form-control" style="height: 15vh;"
+                      placeholder="Original client's email here..."></textarea>
+            <div class="input-group-append">
+                <button id="trigger-translation-send"
+                        class="btn btn-success h-100 no-radius-left">
+                    <i class="fal fa-paper-plane"></i>
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="display: flex; flex-direction: column-reverse; height: 55vh;overflow-y: auto;">
+    <div class="p-4" style="" id="chat-container">
+        @foreach (var message in Model.History.Skip(2))
+        {
+            <div class="row @message.ChatAlignment()">
+                <div class="card p-3 mb-2 @message.ChatColors()">
+                    @Html.Raw(message.Content())
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div class="row fixed-bottom bg-lightgray" style="max-height: 15vh; min-height: 100px;">
+    <div class="col-12 p-4">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <button id="trigger-clear"
+                        class="btn btn-danger h-100 no-radius-right">
+                    <i class="fal fa-trash"></i>
+                </button>
+            </div>
+            <textarea id="message" tabindex="2"
+                      class="form-control" style="height: 10vh"
+                      placeholder="Draft your answer here..."></textarea>
+            <div class="input-group-append">
+                <button id="trigger-send" tabindex="3"
+                        class="btn btn-success h-100 no-radius-left">
+                    <i class="fal fa-paper-plane"></i>
+                    SEND
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
