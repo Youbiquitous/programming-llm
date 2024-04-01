@@ -14,5 +14,5 @@ __pycache__/
 .venv
 .vscode
 
-data
+documents
 chroma_db
