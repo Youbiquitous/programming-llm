@@ -1,0 +1,18 @@
+# general python things to ignore
+build/
+dist/
+*.egg-info/
+*.egg
+*.py[cod]
+__pycache__/
+*.so
+*~
+.tox
+.cache
+
+.env
+.venv
+.vscode
+
+data
+chroma_db

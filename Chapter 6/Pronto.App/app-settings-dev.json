@@ -1,0 +1,27 @@
+///////////////////////////////////////////////////////////////////
+//
+// PRONTO: GPT-Assistant proof-of-concept
+// Copyright (c) Youbiquitous
+//
+// Author: Youbiquitous Team
+//
+
+
+{
+  "General": {
+    "ProjectName": "PRONTO-GPT",
+    "ApplicationName": "Conversational Programming",
+    "ApplicationDescription": "Proof-of-concept of using GPT for Conversational Programming",
+    "Version": "v0.0.1",
+    "BuildInfo": "January 1, 2024"
+  },
+  "Secrets": {
+    "SqlConnectionString": "data source=(local);Integrated Security=True;initial catalog=Pronto; TrustServerCertificate=true;",
+    "OpenAI": {
+      "ApiKey": "YOUAPIKEYHERE", //use environment variables
+      "BaseUrl": "YOURBASEURL", //use environment variables
+      "DeploymentId": "book", //your created model deployment name (i.e. GPT4)
+      "EmbeddingDeploymentId": "embedding" //your created embedding name (i.e. text-embedding-ada-002)
+    }
+  }
+}

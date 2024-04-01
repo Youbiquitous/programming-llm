@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.AI.OpenAI" Version="1.0.0-beta.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pronto.Gpt.Prompts\Pronto.Gpt.Prompts.csproj" />
+    <ProjectReference Include="..\Pronto.Infrastructure\Pronto.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

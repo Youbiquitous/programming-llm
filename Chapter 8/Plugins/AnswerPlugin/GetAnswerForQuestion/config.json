@@ -1,0 +1,21 @@
+﻿{
+  "schema": 1,
+  "type": "completion",
+  "description": "Given a generic question, get an answer and return it as the result of the function.",
+  "completion": {
+    "max_tokens": 500,
+    "temperature": 0.7,
+    "top_p": 1,
+    "presence_penalty": 0.5,
+    "frequency_penalty": 0.5
+  },
+  "input": {
+    "parameters": [
+      {
+        "name": "input",
+        "description": "The user's request.",
+        "defaultValue": ""
+      }
+    ]
+  }
+}
