@@ -9,3 +9,4 @@ tiktoken==0.5.2
 streamlit==1.32.2
 docarray==0.40.0
 pandas==2.2.1
+htbuilder==0.6.2
