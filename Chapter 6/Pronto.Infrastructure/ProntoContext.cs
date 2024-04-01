@@ -13,19 +13,19 @@ public partial class ProntoContext : DbContext
 {
     public static string ConnectionString = "";
 
-    public virtual DbSet<Chunk> CassandraChunks { get; set; }
+    public virtual DbSet<Chunk> Chunks { get; set; }
 
-    public virtual DbSet<CassandraEmbedding> CassandraEmbeddings { get; set; }
+    public virtual DbSet<CassandraEmbedding> Embeddings { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Chunk>(entity =>
         {
             entity.HasKey(e => e.Id)
-                .HasName("pk__Cassandra_Chunks")
+                .HasName("pk__Chunks")
                 .IsClustered(false);
 
-            entity.ToTable("Cassandra_Chunks");
+            entity.ToTable("Chunks");
 
             entity.Property(e => e.Id).ValueGeneratedOnAdd();
         });
@@ -33,10 +33,10 @@ public partial class ProntoContext : DbContext
         modelBuilder.Entity<CassandraEmbedding>(entity =>
         {
             entity.HasKey(e => e.Id)
-                .HasName("pk__Cassandra_Embeddings")
+                .HasName("pk__Embeddings")
                 .IsClustered(true);
 
-            entity.ToTable("Cassandra_Embeddings");
+            entity.ToTable("Embeddings");
 
             entity.Property(e => e.Id).ValueGeneratedOnAdd();
             entity.Property(e => e.ChunkId).ValueGeneratedNever();

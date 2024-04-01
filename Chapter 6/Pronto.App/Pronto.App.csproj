@@ -9,7 +9,6 @@
   <ItemGroup>
     <Compile Remove="Common\Extensions\AuthExtensions.cs" />
     <Compile Remove="Common\Security\EnsureRoleAttribute.cs" />
-    <Compile Remove="Common\Security\LibrogramClaimTypes.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,7 +19,6 @@
     <None Include="bundleconfig.json" />
     <None Include="Common\Extensions\AuthExtensions.cs" />
     <None Include="Common\Security\EnsureRoleAttribute.cs" />
-    <None Include="Common\Security\LibrogramClaimTypes.cs" />
     <None Include="wwwroot\css\webfonts\fa-brands-400.svg" />
     <None Include="wwwroot\css\webfonts\fa-brands-400.woff2" />
     <None Include="wwwroot\css\webfonts\fa-duotone-900.svg" />

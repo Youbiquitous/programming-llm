@@ -52,8 +52,8 @@ public class AssistantGptService : ApplicationServiceBase
         if (history.Any())
         {
             var response = await GptConversationalEngine
-                .Using(Settings.General.OpenAI.ApiKey, Settings.General.OpenAI.BaseUrl)
-                .Model(Settings.General.OpenAI.DeploymentId)
+                .Using(Settings.Secrets.OpenAI.ApiKey, Settings.Secrets.OpenAI.BaseUrl)
+                .Model(Settings.Secrets.OpenAI.DeploymentId)
                 .Prompt(new AssistantPrompt())
                 .History(history)
                 .User(message)
@@ -65,8 +65,8 @@ public class AssistantGptService : ApplicationServiceBase
         else
         {
             var response = await GptConversationalEngine
-                .Using(Settings.General.OpenAI.ApiKey, Settings.General.OpenAI.BaseUrl)
-                .Model(Settings.General.OpenAI.DeploymentId)
+                .Using(Settings.Secrets.OpenAI.ApiKey, Settings.Secrets.OpenAI.BaseUrl)
+                .Model(Settings.Secrets.OpenAI.DeploymentId)
                 .Prompt(new AssistantPrompt())
                 .History(history)
                 .User("Original Email: " + originalEmail)
@@ -86,8 +86,8 @@ public class AssistantGptService : ApplicationServiceBase
     public string Translate(string email, string destinationLanguage)
     {
         var response = GptConversationalEngine
-            .Using(Settings.General.OpenAI.ApiKey, Settings.General.OpenAI.BaseUrl)
-            .Model(Settings.General.OpenAI.DeploymentId)
+            .Using(Settings.Secrets.OpenAI.ApiKey, Settings.Secrets.OpenAI.BaseUrl)
+            .Model(Settings.Secrets.OpenAI.DeploymentId)
             .With(new ChatCompletionsOptions() { Temperature = 0 })
             .Prompt(new TranslationPrompt(destinationLanguage))
             .Seed(42)

@@ -35,14 +35,4 @@ public class GeneralSettings
     /// Indicates the build display information 
     /// </summary>
     public string BuildInfo { get; set; }
-
-    /// <summary>
-    /// Database secrets
-    /// </summary>
-    public SecretsSettings Secrets { get; set; }
-
-    /// <summary>
-    /// OpenAI subscription secrets
-    /// </summary>
-    public OpenAISettings OpenAI { get; set; }
 }

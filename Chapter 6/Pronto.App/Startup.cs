@@ -96,7 +96,7 @@ public class Startup
         });
 
         //DB connection string (in prod taken from env variables)
-        ProntoContext.ConnectionString = settings.General.Secrets.SqlConnectionString;
+        ProntoContext.ConnectionString = settings.Secrets.SqlConnectionString;
 
         // DI
         services.AddSingleton(settings);
@@ -124,7 +124,8 @@ public class Startup
     {
         // Error handling (CHANGE THIS MANUALLY AS APPROPRIATE)
         //app.UseExceptionHandler("/app/error");
-        app.UseDeveloperExceptionPage();
+        if(env.IsDevelopment())
+            app.UseDeveloperExceptionPage();
         app.Use(async (context, next) =>
         {
             await next();       // let it go

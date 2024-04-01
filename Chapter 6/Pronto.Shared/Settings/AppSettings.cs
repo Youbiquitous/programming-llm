@@ -20,7 +20,12 @@ public class AppSettings
     }
 
     /// <summary>
-    /// All settings go here
+    /// All general settings go here
     /// </summary>
     public GeneralSettings General { get; set; }
+
+    /// <summary>
+    /// All secrets settings go here
+    /// </summary>
+    public SecretsSettings Secrets { get; set; }
 }

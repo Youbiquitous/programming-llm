@@ -11,5 +11,13 @@ namespace Pronto.Shared.Settings;
 
 public class SecretsSettings
 {
+    /// <summary>
+    /// SQL connection string
+    /// </summary>
     public string SqlConnectionString { get; set; }
+
+    /// <summary>
+    /// OpenAI subscription secrets
+    /// </summary>
+    public OpenAISettings OpenAI { get; set; }
 }

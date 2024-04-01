@@ -13,7 +13,7 @@
     "ApplicationName": "Conversational Programming",
     "ApplicationDescription": "Proof-of-concept of using GPT for Conversational Programming",
     "Version": "v0.0.1",
-    "BuildInfo": "January 1, 2024"
+    "BuildInfo": "March 31, 2024"
   },
   "Secrets": {
     "SqlConnectionString": "data source=(local);Integrated Security=True;initial catalog=Pronto; TrustServerCertificate=true;",

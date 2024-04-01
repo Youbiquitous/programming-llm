@@ -26,7 +26,7 @@ namespace Pronto.Infrastructure.Repository
             {
                 foreach (var embedding in embeddings)
                 {
-                    _context.CassandraChunks.Add(embedding.chunk);
+                    _context.Chunks.Add(embedding.chunk);
                     _context.SaveChanges();
 
                     // Instert all embedding components
@@ -38,7 +38,7 @@ namespace Pronto.Infrastructure.Repository
                             VectorValueId = i,
                             VectorValueContent = embedding.embeddedChunk[i]
                         };
-                        _context.CassandraEmbeddings.Add(embeddingVector);
+                        _context.Embeddings.Add(embeddingVector);
                     }
                     ret += _context.SaveChanges();
                 }
@@ -57,7 +57,7 @@ namespace Pronto.Infrastructure.Repository
         /// <returns></returns>
         public int AddEmbedding(ProntoContext _context, (Chunk chunk, float[] embeddedChunk) embedding)
         {
-            _context.CassandraChunks.Add(embedding.chunk);
+            _context.Chunks.Add(embedding.chunk);
             _context.SaveChanges();
 
             // Instert all embedding components
@@ -69,7 +69,7 @@ namespace Pronto.Infrastructure.Repository
                     VectorValueId = i,
                     VectorValueContent = embedding.embeddedChunk[i]
                 };
-                _context.CassandraEmbeddings.Add(embeddingVector);
+                _context.Embeddings.Add(embeddingVector);
             }
             return _context.SaveChanges();
         }
@@ -82,7 +82,7 @@ namespace Pronto.Infrastructure.Repository
         public int AddEmbedding((Chunk chunk, float[] embeddedChunk) embedding)
         {
             using var _context = new ProntoContext();
-            _context.CassandraChunks.Add(embedding.chunk);
+            _context.Chunks.Add(embedding.chunk);
             _context.SaveChanges();
 
             // Instert all embedding components
@@ -94,7 +94,7 @@ namespace Pronto.Infrastructure.Repository
                     VectorValueId = i,
                     VectorValueContent = embedding.embeddedChunk[i]
                 };
-                _context.CassandraEmbeddings.Add(embeddingVector);
+                _context.Embeddings.Add(embeddingVector);
             }
             return _context.SaveChanges();
         }
@@ -107,13 +107,13 @@ namespace Pronto.Infrastructure.Repository
         public int DeleteChunk(int id)
         {
             using var _context = new ProntoContext();
-            var article = _context.CassandraChunks.Find(id);
+            var article = _context.Chunks.Find(id);
 
             if (article == null) 
                 return 1;
             
-            _context.CassandraChunks.Remove(article);
-            _context.CassandraEmbeddings.Where(e => e.ChunkId == id).ExecuteDelete();
+            _context.Chunks.Remove(article);
+            _context.Embeddings.Where(e => e.ChunkId == id).ExecuteDelete();
 
             return _context.SaveChanges();
         }
